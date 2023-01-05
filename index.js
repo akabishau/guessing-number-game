@@ -23,6 +23,12 @@ function getRandomNumber(min, max) {
 }
 
 function checkGuess() {
+
+  if (guessInput.value == '') {
+    alert('Please add the number. The input field can\'t be empty 😀');
+    return
+  }
+
   // Get value from guess input element
   const guess = parseInt(guessInput.value, 10);
   attempts = attempts + 1;
