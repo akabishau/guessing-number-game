@@ -40,13 +40,11 @@ function checkGuess() {
   // display error message in case input values are out for gaming range
   if (guess < 1) {
     errorMessage.style.display = ''
-    errorMessage.innerHTML = `<span class="error-style">Must be greater than 0</span><br>
-    Please use numbers between 1 and 99 and try again 😀`
+    errorMessage.firstElementChild.innerHTML = 'Must be greater than 0'
     return
   } else if (guess > 99) {
     errorMessage.style.display = ''
-    errorMessage.innerHTML = `<span class="error-style">Must be less than 100</span><br>
-    Please use numbers between 1 and 99 and try again 😀`
+    errorMessage.firstElementChild.innerHTML = 'Must be less than 100'
     return
   }
 
