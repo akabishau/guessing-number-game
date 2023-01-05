@@ -7,6 +7,8 @@ const tooLowMessage = document.getElementById('too-low');
 const maxGuessesMessage = document.getElementById('max-guesses');
 const numberOfGuessesMessage = document.getElementById('number-of-guesses');
 const correctMessage = document.getElementById('correct');
+const errorMessage = document.getElementById('error-message');
+
 
 let targetNumber;
 let attempts = 0;
@@ -24,16 +26,31 @@ function getRandomNumber(min, max) {
 
 function checkGuess() {
 
+  // if there is no value stop game from running returning early
   if (guessInput.value == '') {
     alert('Please add the number. The input field can\'t be empty 😀');
     return
   }
 
+  hideAllMessages();
+
   // Get value from guess input element
   const guess = parseInt(guessInput.value, 10);
-  attempts = attempts + 1;
 
-  hideAllMessages();
+  // display error message in case input values are out for gaming range
+  if (guess < 1) {
+    errorMessage.style.display = ''
+    errorMessage.innerHTML = `<span class="error-style">Must be greater than 0</span><br>
+    Please use numbers between 1 and 99 and try again 😀`
+    return
+  } else if (guess > 99) {
+    errorMessage.style.display = ''
+    errorMessage.innerHTML = `<span class="error-style">Must be less than 100</span><br>
+    Please use numbers between 1 and 99 and try again 😀`
+    return
+  }
+
+  attempts = attempts + 1;
 
   if (guess === targetNumber) {
     numberOfGuessesMessage.style.display = '';

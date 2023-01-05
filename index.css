@@ -13,3 +13,14 @@ main {
 #reset {
   margin: 20px;
 }
+
+
+.error-style {
+  color: red;
+  align-content: center;
+}
+
+
+#error-message {
+  text-align: center;
+}
