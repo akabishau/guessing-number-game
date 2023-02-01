@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="index.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet">
     <title>Number Guesser</title>
   </head>
   <body>
@@ -15,10 +15,14 @@
         less?
       </p>
       <div>
-        <input type="number" id="guess" min="1" max="99" />
+        <input type="number" id="guess" min="1" max="99">
         <button id="submit">Submit Guess</button>
       </div>
       <div>
+        <p class="message" id="error-message">
+          <span class="error-style"></span><br>
+          Please use numbers between 1 and 99 and try again 😀
+        </p>
         <p class="message" id="number-of-guesses"></p>
         <p class="message" id="too-high">You guessed too high. Try again.</p>
         <p class="message" id="too-low">You guessed too low. Try again.</p>
@@ -26,7 +30,7 @@
           You reached the max number of guesses
         </p>
         <p class="message" id="correct">
-          Congratulations, You guessed correctly! <br />
+          Congratulations, You guessed correctly!<br>
           Would you like to play again?
         </p>
       </div>
